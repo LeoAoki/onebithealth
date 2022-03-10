@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         bottom: 0,
-        backgroundColor: "#ffffff",
+        backgroundColor: "#FFFFFF",
         alignItems: "center",
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
@@ -18,9 +18,10 @@ const styles = StyleSheet.create({
         padding: 10
     },
     formLabel: {
-        color: "#000000",
+        color: "#40593D",
         fontSize: 18,
-        paddingLeft: 20
+        paddingLeft: 20,
+        fontWeight: "bold",
     },
     input: {
         width: "90%",
@@ -35,7 +36,7 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         width: "90%",
-        backgroundColor: "#ff0043",
+        backgroundColor: "#E07C38",
         paddingTop: 14,
         paddingBottom: 14,
         marginLeft: 12,

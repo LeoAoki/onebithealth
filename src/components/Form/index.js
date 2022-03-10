@@ -10,6 +10,7 @@ export default function Form() {
     const [messageImc, setMessageImc] = useState("Preencha o peso e altura");
     const [imc, setImc] = useState(null)
     const [textButton, setTextButton] = useState("Calcular")
+    const [classification, setClassification] = useState(null)
 
     function imcCalculator() {
         return setImc((weight/(height*height)).toFixed(2))
@@ -22,9 +23,26 @@ export default function Form() {
             setWeight(null)
             setMessageImc("Seu imc é igual:")
             setTextButton("Calcular Novamente")
+
+            if (imc < 18.5)
+                setClassification("Abaixo do Peso")
+            else if (imc >= 18.5 && imc < 25)
+                setClassification("Peso Normal")
+            else if (imc >= 25 && imc < 30)
+                setClassification("Sobrepeso")
+            else if (imc >= 30 && imc < 35)
+                setClassification("Obesidade Grau I")
+            else if (imc >= 35 && imc < 40)
+                setClassification("Obesidade Grau II")
+            else if (imc >= 40)
+                setClassification("Obesidade Grau III")
+            else
+                setClassification("Valores inválidos")
+
             return 
         }
         setImc(null)
+        setClassification(null)
         setTextButton("Calcular")
         setMessageImc("Preencha o peso e altura")
     }
@@ -45,7 +63,7 @@ export default function Form() {
                     style={styles.input}
                     onChangeText={setWeight}
                     value={weight}
-                    placeholder="Ex. 75.365"
+                    placeholder="Ex. 75.6"
                     keyboardType="numeric"
                 />
                 <TouchableOpacity
@@ -57,7 +75,7 @@ export default function Form() {
                     <Text style={styles.textButtonCalculator}>{textButton}</Text>
                 </TouchableOpacity>
             </View>
-            <ResultImc messageResultImc={messageImc} resultImc={imc} />
+            <ResultImc messageResultImc={messageImc} resultImc={imc} messageClassification={classification} />
         </View>
     );
 }

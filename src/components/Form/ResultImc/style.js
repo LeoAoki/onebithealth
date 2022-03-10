@@ -11,12 +11,18 @@ const styles = StyleSheet.create({
     },
     numberImc: {
         fontSize: 48,
-        color: "#FF0043",
+        color: "#E07C38",
         fontWeight: "bold",
     },
     information: {
         fontSize: 18,
-        color: "#FF0043",
+        color: "#E07C38",
+        fontWeight: "bold",
+    },
+    classification: {
+        marginTop: 20,
+        fontSize: 35,
+        color: "#40593D",
         fontWeight: "bold",
     },
 });
